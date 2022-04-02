@@ -35,7 +35,7 @@ else
 	i=1
 	ZOO_SERVERS=""
 	for line in $zoo_list; do
-		zoo_server=`nslookup $line |grep name |awk -F " " '{print $4}'`
+		zoo_server=`nslookup $line |grep name |awk -F " " '{print $4}' |awk 'END{print}'`
 		if [[ -n $zoo_server ]]; then
 			if [[ $line == $local_ip ]]; then
 				zoo_server="0.0.0.0"
