@@ -12,3 +12,4 @@ init_config.sh内获取ZOO_SERVERS过程
 使用dig service.namespace.svc.cluster.local获取当前pod 的ip
 再通过ip反向解析 nslookup ip 获取 对应的ip-name.service.namespace.svc.cluster.local
 完成zoo_servers值拼接
+另外，启动pod 需要同时启动，如有其中一个节点出问题，重新伸缩为0再次尝试
